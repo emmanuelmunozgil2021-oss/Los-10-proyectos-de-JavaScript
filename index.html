@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los 10 Proyectos de JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="contenedor-principal">
+        <h1>“El Reto de los 10 Proyectos de JavaScript”</h1>
+        <h2>Emmanuel Muñoz</h2>
+    </header>
+
+    <nav class="menu-navegacion">
+        <button onclick="mostrarProyecto('p1')">1. Contador</button>
+        <button onclick="mostrarProyecto('p2')">2. Tareas</button>
+        <button onclick="mostrarProyecto('p3')">3. Adivina el Número</button>
+        <button onclick="mostrarProyecto('p4')">4. Calculadora</button>
+        <button onclick="mostrarProyecto('p5')">5. Colores</button>
+        <button onclick="mostrarProyecto('p6')">6. Temporizador</button>
+        <button onclick="mostrarProyecto('p7')">7. Contraseñas</button>
+        <button onclick="mostrarProyecto('p8')">8. Modo Oscuro</button>
+        <button onclick="mostrarProyecto('p9')">9. Piedra/Papel/Tijera</button>
+        <button onclick="mostrarProyecto('p10')">10. Galería</button>
+    </nav>
+
+    <main>
+        <!-- Proyecto 1 -->
+        <section id="p1" class="container ">
+            <h1 class="counter-title">Contador</h1>
+            <span id="value">0</span>
+            <div class="btn-container">
+                <button class="btn menos">1-</button>
+                <button class="btn reinicio">Reinicio</button>
+                <button class="btn mas">1+</button>
+            </div>
+        </section>
+        
+        <!-- Proyecto 2 -->
+<section id="p2" class="container">
+    <h1>Lista de Tareas</h1>
+    <div class="tareas-container">
+        <input type="text" id="input-tarea" placeholder="Agregar tarea...">
+        <button class="btn-add" onclick="agregarTarea()">Agregar</button>
+    </div>
+    <div class="li-container">
+        <ul id="lista-tareas"></ul>    
+    </div> 
+</section>
+
+        <!-- Proyecto 3 -->
+<section id="p3" class="container">
+        <h1>Adivina el Número</h1>
+            <p>Introduce un número del 1 al 100:</p>
+                <input type="number"  id="entrada">
+                <button id="botonAdivinar">Adivinar</button>
+            <p id="mensaje"></p>
+            <p>Intentos: <span id="intentos">0</span></p>
+        <button id="botonReiniciar" >Nuevo juego</button>
+</section>    
+
+        <!-- Proyecto 4 -->
+<section id="p4" class="container">
+            <h1>Calculadora</h1>
+            <div id="pantalla">0</div>
+            <div class="botones">
+                <button class="btn-calc" id="limpiar">C</button>
+                <button class="btn-calc" data-valor="/">/</button>
+                <button class="btn-calc" data-valor="*">*</button>
+                <button class="btn-calc" data-valor="-">-</button>
+                <button class="btn-calc" data-valor="7">7</button>
+                <button class="btn-calc" data-valor="8">8</button>
+                <button class="btn-calc" data-valor="9">9</button>
+                <button class="btn-calc" data-valor="+">+</button>
+                <button class="btn-calc" data-valor="4">4</button>
+                <button class="btn-calc" data-valor="5">5</button>
+                <button class="btn-calc" data-valor="6">6</button>
+                <button class="btn-calc" data-valor="0">0</button>
+                <button class="btn-calc" data-valor="1">1</button>
+                <button class="btn-calc" data-valor="2">2</button>
+                <button class="btn-calc" data-valor="3">3</button>
+                <button id="igual">=</button>
+            </div>
+</section>
+
+        <!-- Proyecto 5 -->
+<section id="p5" class="container">
+        <div id="proyecto-colores">
+                <h1>Color de Fondo</h1>
+                <h2 id="codigo-hex">#ffffff</h2>
+                <div class="controles">
+                    <button id="btn-cambiar">Cambiar color</button>
+                    <button id="btn-copiar">Copiar código</button>
+                </div>
+            <p id="aviso" style="display:none">¡Copiado!</p>
+        </div>
+</section>
+
+        <!-- Proyecto 6 -->
+<section id="p6" class="container">
+            <div id="tm-contenedor">
+                <h2>Temporizador</h2>
+                <div id="tm-pantalla">
+                    <input type="number" id="tm-minutos" value="0" min="0" max="59"> :
+                    <input type="number" id="tm-segundos" value="0" min="0" max="59">
+                </div>
+                <div class="tm-controles">
+                    <button id="tm-inicio">Iniciar</button>
+                    <button id="tm-pausa">Pausar</button>
+                    <button id="tm-reset">Reiniciar</button>
+                </div>
+                <h1 id="tm-alerta" style="display:none">¡Tiempo terminado!</h1>
+            </div>
+</section>
+
+        <!-- Proyecto 7 -->
+<section id="p7" class="container">
+        <div id="contraseña-container">
+            <h2>Generador de Contraseñas</h2>
+                <div class="resultado-box">
+                    <span id="pass-resultado">P4ssw0rd!</span>
+                    <button id="btn-copiar-pass">Copiar</button>
+                </div>
+                <div class="opciones">
+                    <label> <input type="number" id="pass-longitud" min="6" max="20" value="12"></label>
+                    <label><input type="checkbox" id="chk-mayus" checked> Mayúsculas</label>
+                    <label><input type="checkbox" id="chk-minus" checked> Minúsculas</label>
+                    <label><input type="checkbox" id="chk-num" checked> Números</label>
+                    <label><input type="checkbox" id="chk-simb"> Símbolos</label>
+                </div>
+            <button id="btn-generar">Generar Contraseña</button>
+        </div>
+</section>       
+
+        <!-- Proyecto 8-->
+<section id="p8" class="container">
+    <h1>Modo Oscuro</h1>
+    <p>Haz clic para cambiar el tema de esta tarjeta.</p>
+    <button id="btn-modo">Cambiar Tema</button>
+</section>
+
+        <!-- Proyecto 9 -->
+        <section id="p9" class="container">
+            <h2>Piedra, Papel o Tijera</h2>
+            <div class="marcador">
+                <div>Usuario: <span id="puntos-usuario">0</span></div>
+                <div>PC: <span id="puntos-pc">0</span></div>
+            </div>
+            <div class="tablero">
+                <p id="resultado-texto">¡Elige tu arma!</p>
+                <p id="eleccion-pc">La PC eligió: -</p>
+            </div>
+            <div class="opciones-ppt">
+                <button class="btn-arma" data-arma="piedra">🪨 Piedra</button>
+                <button class="btn-arma" data-arma="papel">📄 Papel</button>
+                <button class="btn-arma" data-arma="tijera">✂️ Tijera</button>
+            </div>
+            <button id="btn-reset-game">Reiniciar Marcador</button>
+        </section>
+        
+        <!-- Proyecto 10 -->
+<section id="p10" class="container">
+            <h1>Galería</h1>
+                <input type="text" id="buscador" placeholder="Buscar por nombre...">
+                    <div class="filtros">
+                    <button class="btn-filtro" data-categoria="todas">Todas</button>
+                    <button class="btn-filtro" data-categoria="animales">Animales</button>
+                    <button class="btn-filtro" data-categoria="tecnologia">Tecnología</button>
+                    <button class="btn-filtro" data-categoria="naturaleza">Naturaleza</button>
+                    </div>
+            <div id="contenedor-imagenes"></div>
+
+<div id="modal-imagen" class="modal">
+    <span class="cerrar" id="btn-cerrar-modal">X</span> 
+    <img class="modal-contenido" id="img-grande">
+</div>
+</section>
+
+    <footer class="pie-pagina">
+        <p class="letra-final">Emmanuel Muñoz © 2026 - https://github.com/emmanuelmunozgil2021-oss</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
